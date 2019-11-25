@@ -1,9 +1,9 @@
 const Jimp = require('jimp');
 async function onRuntimeInitialized(){
   // load local image file with jimp. It supports jpg, png, bmp, tiff and gif:
-  var jimpSrc = await Jimp.read('./测试图集/lena.jpg');
+  const jimpSrc = await Jimp.read('./测试图集/lena.jpg');
   // `jimpImage.bitmap` property has the decoded ImageData that we can use to create a cv:Mat
-  var src = cv.matFromImageData(jimpSrc.bitmap);
+  const src = cv.matFromImageData(jimpSrc.bitmap);
   // following lines is copy&paste of opencv.js dilate tutorial:
   let dst = new cv.Mat();
   // let M = cv.Mat.ones(5, 5, cv.CV_8U);

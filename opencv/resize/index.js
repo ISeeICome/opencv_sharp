@@ -2,12 +2,12 @@ const Jimp = require('jimp');
 const cv = require('../opencv.js');
 
 const testSize = async () => {
-    const imageName = "DJI_0966";
+    const imageName = "tower";
     const imageType = "jpg";
-    var jimpSrc = await Jimp.read(`./测试图集/${imageName}.JPG`);
-    var src = cv.matFromImageData(jimpSrc.bitmap);
-    let dst = new cv.Mat();
-    let dsize = new cv.Size(100, 100);
+    const jimpSrc = await Jimp.read(`./测试图集/${imageName}.JPG`);
+    const src = cv.matFromImageData(jimpSrc.bitmap);
+    const dst = new cv.Mat();
+    const dsize = new cv.Size(100, 100);
     let prevTime;
     let diffTime;
     

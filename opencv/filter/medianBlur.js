@@ -3,8 +3,8 @@ const cv = require('../opencv.js');
 const test = async () => {
     const imageName = 'lena';
     const imageType = 'jpg';
-    var jimpSrc = await Jimp.read(`./测试图集/${imageName}.png`);
-    var src = cv.matFromImageData(jimpSrc.bitmap);
+    const jimpSrc = await Jimp.read(`./测试图集/${imageName}.png`);
+    const src = cv.matFromImageData(jimpSrc.bitmap);
     let dst = new cv.Mat();
     cv.medianBlur(src, dst, 5);
     await outputImg(dst, `${imageName}-medianBlur.${imageType}`);
